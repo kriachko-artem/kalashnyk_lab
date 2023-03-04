@@ -1,0 +1,39 @@
+header {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(235, 237, 236, 0.5);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.19);
+  display: flex;
+  align-items: stretch;
+  column-gap: 50px;
+  z-index: 10;
+  transition: 0.4s;
+}
+header.down {
+  height: 50px;
+}
+header .logo {
+  height: 100%;
+  width: 100px;
+  background-color: rgb(255, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  column-gap: 10px;
+}
+header nav a {
+  display: flex;
+  align-items: center;
+}
+header nav a:visited {
+  color: unset;
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,56 @@
+.questions .question-answer {
+  width: 60%;
+  padding: 0 20px;
+  background-color: #ebedec;
+}
+.questions .question-answer .questionItem {
+  display: flex;
+  flex-direction: column;
+}
+.questions .question-answer .questionItem .question {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+  height: 50px;
+  border: none;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: unset;
+  box-sizing: content-box;
+}
+.questions .question-answer .questionItem .question .cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 30px;
+  transition: 0.4s;
+}
+.questions .question-answer .questionItem .question .cross:before, .questions .question-answer .questionItem .question .cross:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.questions .question-answer .questionItem .question .cross:after {
+  transform: rotate(90deg);
+}
+.questions .question-answer .questionItem .answer {
+  display: flex;
+  align-items: flex-start;
+  height: 40px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.questions .question-answer .questionItem.closed .answer {
+  height: 0;
+}
+.questions .question-answer .questionItem.opened .question .cross {
+  transform: rotate(45deg);
+}
+
+/*# sourceMappingURL=questions.css.map */
