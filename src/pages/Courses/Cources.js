@@ -1,8 +1,15 @@
 import './styles/courses.css'
+import {Poster} from "./Poster/Poster";
+import {CoursesList} from "./CoursesList/CoursesList";
 
 export function Courses () {
 
   return (
-       <h1>Courses</h1>
+     <div className={'courses'}>
+       <Poster title={'Курси'}
+               description={'Онлайн тренінги по самих сучасних ін’єкційних техніках'}
+       />
+        <CoursesList />
+     </div>
   )
 }

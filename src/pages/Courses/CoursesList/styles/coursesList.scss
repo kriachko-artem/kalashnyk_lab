@@ -1,0 +1,17 @@
+.coursesList{
+  .title{
+    margin-bottom: 100px;
+    h2{
+      text-align: center;
+      font-size: 40px;
+    }
+  }
+  .list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+}
