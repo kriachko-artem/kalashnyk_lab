@@ -11,13 +11,13 @@ export function Header() {
    const [direction,setDirection] = useState('');
    useEffect(()=>{
       new WheelIndicator({
-         elem: document.querySelector('main'),
+         elem: document.querySelector('html'),
          callback: function(e){
             if (e.direction !== direction){
                setDirection(e.direction)
             }
          },
-         preventMouse: false
+         preventMouse: false,
       });
    },)
 
