@@ -1,7 +1,7 @@
 import './styles/consultationModal.css'
 import {useDispatch, useSelector} from "react-redux";
 import {hideModal} from "../../store/slices/consultationModal";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import {Selector} from "../Selector/Selector";
 import { IoClose, IoCheckmarkSharp } from "react-icons/io5";
 export function ConsultationModal () {

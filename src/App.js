@@ -5,7 +5,6 @@ import {Courses} from "./pages/Courses/Cources";
 import {Contacts} from "./pages/Contacts/Contacts";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
-import {hideModal} from "./store/slices/consultationModal";
 import {setCourses} from "./store/slices/coursesLits";
 import coursesList from './data/data.json'
 

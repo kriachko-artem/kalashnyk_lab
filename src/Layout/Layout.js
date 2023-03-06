@@ -1,9 +1,8 @@
 import {Header} from "./Header/Header";
 import {Footer} from "./Footer/Footer";
 import {Main} from "./Main/Main";
-import {useTransform, motion, useViewportScroll, useScroll} from "framer-motion";
+import {useScroll} from "framer-motion";
 import './styles/layout.css'
-import {useEffect, useRef} from "react";
 import {ConsultationModal} from "../components/ConsultationModal/ConsultationModal";
 import {useSelector} from "react-redux";
 
