@@ -1,0 +1,16 @@
+button.consultation {
+  background-color: #4ed401;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: background-color 0.2s;
+}
+button.consultation:hover {
+  background-color: #62ea14;
+}
+button.consultation:active {
+  background-color: #4ed401;
+}
+
+/*# sourceMappingURL=buttonConsultation.css.map */

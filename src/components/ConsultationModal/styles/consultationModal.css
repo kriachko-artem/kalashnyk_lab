@@ -1,0 +1,102 @@
+.modalWrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.18);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalWrapper .modal {
+  width: 50%;
+  background-color: #fff;
+  border: 1px solid #ebedec;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.modalWrapper .modal .modalHeader {
+  padding: 20px;
+}
+.modalWrapper .modal .modalHeader h1 {
+  color: #8d949e;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.modalWrapper .modal form {
+  flex-grow: 1;
+}
+.modalWrapper .modal form .input {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #ebedec;
+}
+.modalWrapper .modal form .input:last-child {
+  border-bottom: 1px solid #ebedec;
+}
+.modalWrapper .modal form .input input {
+  flex-grow: 1;
+  border: none;
+}
+.modalWrapper .modal form .input .selectorContainer {
+  flex-grow: 1;
+}
+.modalWrapper .modal form .input label {
+  width: 40%;
+  color: #8d949e;
+}
+.modalWrapper .modal .modalFooter {
+  padding: 20px;
+}
+.modalWrapper .modal .modalFooter .permission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  margin-bottom: 20px;
+  user-select: none;
+}
+.modalWrapper .modal .modalFooter .permission .checkbox {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c8ebfd;
+  background-color: #f4fbff;
+  border-radius: 5px;
+}
+.modalWrapper .modal .modalFooter .permission .checkbox.checked {
+  background-color: #d1efff;
+}
+.modalWrapper .modal .modalFooter .send {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #4ed401;
+}
+.modalWrapper .modal .modalFooter .send:hover {
+  background-color: #62ea14;
+}
+.modalWrapper .modal button.closeButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=consultationModal.css.map */

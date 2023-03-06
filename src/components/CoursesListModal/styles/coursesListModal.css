@@ -1,0 +1,54 @@
+.headerModal {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  top: 100%;
+  background-color: #fff;
+  cursor: default;
+  transition: 0.3s ease-out;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.headerModal .updated {
+  opacity: 0;
+}
+@keyframes update {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.headerModal .subCategoriesAndCourses {
+  display: flex;
+  align-items: flex-start;
+}
+.headerModal .submenuColumn {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.headerModal .submenuColumn:not(:last-child) {
+  border-right: 1px solid #ebedec;
+}
+.headerModal .submenuColumn.first {
+  width: 200px;
+}
+.headerModal .submenuColumn.second {
+  width: 200px;
+}
+.headerModal .submenuColumn .subItem {
+  cursor: pointer;
+  padding: 20px 0;
+}
+.headerModal .submenuColumn .subItem:not(:last-child) {
+  border-bottom: 1px solid #ebedec;
+}
+.headerModal .divider {
+  height: 100%;
+  width: 1px;
+  background-color: #ebedec;
+}
+
+/*# sourceMappingURL=coursesListModal.css.map */
