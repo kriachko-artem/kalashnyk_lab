@@ -1,5 +1,5 @@
 import './styles/courses.css'
-import {Poster} from "./Poster/Poster";
+import {Poster} from "../../components/Poster/Poster";
 import {CoursesList} from "./CoursesList/CoursesList";
 
 export function Courses () {

@@ -1,0 +1,48 @@
+.headerModal{
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  top: 100%;
+  background-color: #fff;
+  cursor: default;
+  transition: 0.3s ease-out;
+  border-radius: 10px;
+  overflow: hidden;
+  .updated{
+    opacity: 0;
+    @keyframes update {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+  }
+  .subCategoriesAndCourses{
+    display: flex;
+    align-items: flex-start;
+  }
+  .submenuColumn{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    &:not(:last-child){
+      border-right: 1px solid #ebedec;
+    }
+    &.first{
+      width: 200px;
+    }
+    &.second{
+      width: 200px;
+    }
+    .subItem{
+      cursor: pointer;
+      padding: 20px 0;
+      &:not(:last-child){
+        border-bottom: 1px solid #ebedec;
+      }
+    }
+  }
+  .divider{
+    height: 100%;
+    width: 1px;
+    background-color: #ebedec;
+  }
+}

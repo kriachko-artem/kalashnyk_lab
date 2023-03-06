@@ -1,15 +1,27 @@
 import './styles/home.css'
-import {Poster} from "../Courses/Poster/Poster";
+import {Poster} from "../../components/Poster/Poster";
 import {Questions} from "../../components/Questions/Questions";
+import {ButtonConsultation} from "../../components/ButtonConsultation/ButtonConsultation";
 
 
 export function Home () {
-
+   const posterStyles = {
+      poster:{
+         alignItems: 'flex-start',
+      },
+      content: {
+         textAlign: 'left',
+         paddingLeft: 100,
+      }
+   };
   return (
        <div className={'home'}>
          <Poster title={'Покращення зовнішності під ключ'}
                  description={'Я використовую найсучашніші і не болючі ін’єкційні техніки'}
-         />
+                 style={posterStyles}
+         >
+            <ButtonConsultation/>
+         </Poster>
           <section className={'about content'}>
              <div className={'titleContainer'}>
                 <h1 className={'title'}>Привіт, мене звати Калашник Денис</h1>

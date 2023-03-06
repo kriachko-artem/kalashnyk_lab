@@ -1,7 +1,6 @@
 header{
-  height: 100px;
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   background-color: rgba(235, 237, 236, .5);
   border-bottom: 1px solid rgba(128, 128, 128, 0.19);
@@ -9,10 +8,6 @@ header{
   align-items: stretch;
   column-gap: 50px;
   z-index: 10;
-  transition: 0.4s;
-  &.down{
-    height: 50px;
-  }
   .logo{
     height: 100%;
     width: 100px;
@@ -26,6 +21,18 @@ header{
     align-items: center;
     flex-grow: 1;
     column-gap: 10px;
+    .navItems {
+      display: flex;
+      column-gap: 20px;
+      .item {
+        cursor: pointer;
+        position: relative;
+        .navButton{
+          border: none;
+          background-color: unset;
+        }
+      }
+    }
     a{
       display: flex;
       align-items: center;

@@ -1,15 +1,10 @@
 import './styles/coursesList.css'
 import {Course} from "./Course/Course";
+import {useSelector} from "react-redux";
 
 export function CoursesList () {
 
-   const coursesList = [
-      {id: 1, title: 'Course 1'},
-      {id: 2, title: 'Course 2'},
-      {id: 3, title: 'Course 3'},
-      {id: 4, title: 'Course 4'},
-      {id: 5, title: 'Course 5'},
-   ]
+   const coursesList = useSelector(state => state.coursesListReducer.courses);
 
   return (
        <section className={'coursesList content'}>

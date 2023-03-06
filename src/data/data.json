@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "title": "Ботулінотерапія",
+    "courses": [
+      {
+        "id": 1,
+        "title": "Лобна ботулінотерапія 1-",
+        "value": "forehead-botulinum-therapy-1",
+        "path": "/forehead-botulinum-therapy-1"
+      },
+      {
+        "id": 2,
+        "title": "Лобна ботулінотерапія 1-",
+        "value": "forehead-botulinum-therapy-2",
+        "path": "/forehead-botulinum-therapy-2"
+      },
+      {
+        "id": 3,
+        "title": "Лобна ботулінотерапія 1-",
+        "value": "forehead-botulinum-therapy-3",
+        "path": "/forehead-botulinum-therapy-3"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Контурна пластика обличчя",
+    "courses": [
+      {
+        "id": 1,
+        "title": "Контурна пластика обличчя 1-",
+        "value": "facial-contouring-1",
+        "path": "/facial-contouring-1"
+      },
+      {
+        "id": 2,
+        "title": "Контурна пластика обличчя 2-",
+        "value": "facial-contouring-2",
+        "path": "/facial-contouring-2"
+      },
+      {
+        "id": 3,
+        "title": "Контурна пластика обличчя 1-",
+        "value": "facial-contouring-3",
+        "path": "/facial-contouring-3"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Аугментація губ",
+    "courses": [
+      {
+        "id": 1,
+        "title": "Аугментація губ 1-",
+        "value": "lip-augmentation-1",
+        "path": "/lip-augmentation-1"
+      },
+      {
+        "id": 2,
+        "title": "Аугментація губ 1-",
+        "value": "lip-augmentation-2",
+        "path": "/lip-augmentation-2"
+      },
+      {
+        "id": 3,
+        "title": "Аугментація губ 1-",
+        "value": "lip-augmentation-3",
+        "path": "/lip-augmentation-3"
+      }
+    ]
+
+  }
+]

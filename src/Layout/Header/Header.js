@@ -1,42 +1,46 @@
 import './styles/header.css'
 import {Link} from "react-router-dom";
-import WheelIndicator from "wheel-indicator";
 import {useEffect, useState} from "react";
+import {motion, useTransform} from "framer-motion";
+import {CoursesListModal} from "../../components/CoursesListModal/CoursesListModal";
 
 
+export function Header({offsetY, scrollY}) {
 
+   const headerSizes = [100, 50];
 
-export function Header() {
+   const styles = {
+      height: useTransform(scrollY, offsetY, headerSizes),
+   };
+   const [opened,setOpened] = useState(false);
 
-   const [direction,setDirection] = useState('');
-   useEffect(()=>{
-      new WheelIndicator({
-         elem: document.querySelector('html'),
-         callback: function(e){
-            if (e.direction !== direction){
-               setDirection(e.direction)
-            }
-         },
-         preventMouse: false,
-      });
-   },)
+   const openClose = () => {
+     setOpened(!opened)
+   }
 
    return (
-      <header className={direction}>
+      <motion.header style={styles}>
          <Link to={'/'} className={'logo'}>
             <div>Logo</div>
          </Link>
          <nav>
-            <Link to={'/'}>
-               Home
-            </Link>
-            <Link to={'/courses'}>
-               Courses
-            </Link>
-            <Link to={'/contacts'}>
-               Contacts
-            </Link>
+            <ul className={'navItems'}>
+               <li className="item">
+                  <Link to={'/'}>
+                     Home
+                  </Link>
+               </li>
+               <li className={'item'}>
+                  <button onClick={()=>setOpened(true)} className={'navButton'}>Courses</button>
+                  {opened ? <CoursesListModal close={openClose} opened={opened} /> : null}
+               </li>
+               <li className="item">
+                  <Link to={'/contacts'}>
+                     Contacts
+                  </Link>
+               </li>
+            </ul>
          </nav>
-      </header>
+      </motion.header>
    )
 }

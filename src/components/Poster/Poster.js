@@ -1,17 +1,20 @@
 import './styles/poster.css'
 
-export function Poster ({title, description}) {
+export function Poster ({title, description, style, children}) {
 
   return (
-     <section className={'poster'}>
+     <section className={'poster'} style={style.poster}>
         <div className="img-holder background">
            <div className="background">
               Poster
            </div>
         </div>
-        <div className={'titleContainer'}>
+        <div className="content" style={style.content}>
            <h1 className={'title'}>{title}</h1>
            <span className={'description'}>{description}</span>
+           <div className="child">
+              {children || null}
+           </div>
         </div>
      </section>
   )
