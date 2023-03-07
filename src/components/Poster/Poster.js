@@ -9,11 +9,13 @@ export function Poster ({title, description, style, children}) {
               Poster
            </div>
         </div>
-        <div className="content" style={style.content}>
-           <h1 className={'title'}>{title}</h1>
-           <span className={'description'}>{description}</span>
-           <div className="child">
-              {children || null}
+        <div className="container">
+           <div className="posterContent" style={style.content}>
+              <h1 className={'title'}>{title}</h1>
+              <span className={'description'}>{description}</span>
+              <div className="child">
+                 {children || null}
+              </div>
            </div>
         </div>
      </section>

@@ -1,3 +1,45 @@
-
+.home .coursesList {
+  background-color: azure;
+  padding: 80px 0;
+}
+.home .coursesList .categoriesList {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 20px;
+}
+.home .preferences .titleBlock {
+  align-self: flex-start;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.home .preferences .preferencesListBlock {
+  width: 100%;
+}
+.home .preferences .preferencesListBlock .preferencesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.home .preferences .preferencesListBlock .preferencesList .preferenceItem {
+  display: flex;
+  column-gap: 15px;
+}
+.home .preferences .preferencesListBlock .preferencesList .preferenceItem .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebedec;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.home .preferences .preferencesListBlock .preferencesList .preferenceItem .description h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.home .questions {
+  background-color: azure;
+}
 
 /*# sourceMappingURL=home.css.map */

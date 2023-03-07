@@ -1,5 +1,5 @@
 import './styles/coursesList.css'
-import {Course} from "./Course/Course";
+import {CourseTile} from "../../../components/CourseTile/CourseTile";
 import {useSelector} from "react-redux";
 
 export function CoursesList () {
@@ -14,7 +14,7 @@ export function CoursesList () {
           </div>
          <ul className="list">
             {coursesList.map(item=>{
-               return (<Course key={item.id} data={item}/>)
+               return (<CourseTile key={item.id} data={item}/>)
             })}
          </ul>
        </section>

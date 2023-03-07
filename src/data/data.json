@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Ботулінотерапія",
+    "path": "botulinum-therapy",
     "courses": [
       {
         "id": 1,
@@ -26,6 +27,7 @@
   {
     "id": 2,
     "title": "Контурна пластика обличчя",
+    "path": "facial-contouring",
     "courses": [
       {
         "id": 1,
@@ -50,6 +52,7 @@
   {
     "id": 3,
     "title": "Аугментація губ",
+    "path": "lip-augmentation",
     "courses": [
       {
         "id": 1,

@@ -7,19 +7,20 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
-.poster .content .title {
+.poster .posterContent .title {
   font-weight: 600;
   font-size: 40px;
   color: #000;
   margin-bottom: 20px;
   line-height: 1.3;
 }
-.poster .content .description {
+.poster .posterContent .description {
   font-size: 22px;
   line-height: 1.5;
 }
-.poster .content .child {
+.poster .posterContent .child {
   margin-top: 15px;
 }
 .poster .img-holder {

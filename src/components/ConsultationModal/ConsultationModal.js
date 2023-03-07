@@ -68,7 +68,7 @@ export function ConsultationModal () {
             <div className="modalFooter">
                <div className="permission">
                   <span onClick={()=>setPermission(!permission)}
-                        className={`checkbox ${permission ? 'checked' : ''}`}>
+                        className={`checkbox iconHolder ${permission ? 'checked' : ''}`}>
                      {permission ? <IoCheckmarkSharp color={'#0795e2'}/> : null}
                   </span>
                   <label>Згоден на обробку персональних даних</label>

@@ -23,7 +23,7 @@ export function Selector ({options}) {
        <div ref={ref} className={"selector"}>
           <div onClick={openClose} className={`label ${opened ? 'opened' : ''}`}>
              {checked ? checked.label : 'Оберіть'}
-             <span className={'indicator'}><IoCaretDown/></span>
+             <span className={'iconHolder'}><IoCaretDown/></span>
           </div>
           {opened ? <Dropdown onChecked={onChecked} options={options} /> : null}
        </div>

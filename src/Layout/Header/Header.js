@@ -1,6 +1,7 @@
 import './styles/header.css'
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {IoChevronDownOutline} from "react-icons/io5";
 import {motion, useTransform} from "framer-motion";
 import {CoursesListModal} from "../../components/CoursesListModal/CoursesListModal";
 
@@ -27,16 +28,16 @@ export function Header({offsetY, scrollY}) {
             <ul className={'navItems'}>
                <li className="item">
                   <Link to={'/'}>
-                     Home
+                     На початок
                   </Link>
                </li>
-               <li className={'item'}>
-                  <button onClick={()=>setOpened(true)} className={'navButton'}>Courses</button>
+               <li onClick={()=>setOpened(true)} className={'item item_select'}>Курси
+                  <span className={'iconHolder'}><IoChevronDownOutline /></span>
                   {opened ? <CoursesListModal close={openClose} opened={opened} /> : null}
                </li>
                <li className="item">
                   <Link to={'/contacts'}>
-                     Contacts
+                     Контакти
                   </Link>
                </li>
             </ul>

@@ -7,6 +7,7 @@ import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {setCourses} from "./store/slices/coursesLits";
 import coursesList from './data/data.json'
+import {Category} from "./pages/Category/Category";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                <Route index element={<Home />}/>
                <Route path={'courses'} element={<Courses />}/>
                <Route path={'contacts'} element={<Contacts />}/>
+               <Route path={'category/:category'} element={<Category />}/>
             </Route>
          </Routes>
       </>
