@@ -1,0 +1,32 @@
+.categoryTile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.categoryTile .categoryTile_title {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.categoryTile .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.categoryTile .background img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.categoryTile:hover .background img {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=categoryTile.css.map */
