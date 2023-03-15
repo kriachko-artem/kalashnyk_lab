@@ -3,76 +3,32 @@
     "id": 1,
     "title": "Ботулінотерапія",
     "path": "botulinum-therapy",
+    "description": "Ботулінотерапія – це медична процедура, при якій у шкіру вводять маленькі дози ботулінічного токсину типу А, щоб тимчасово паралізувати м'язи та зменшити мімічні зморшки на обличчі. Ботулінотерапія може використовуватися для лікування мігрені, надлишкового потовиділення, м'язових спазмів та інших медичних проблем. Процедура зазвичай виконується в кабінеті косметичного хірурга чи дерматолога та потребує мінімального часу відновлення.",
     "courses": [
       {
         "id": 1,
         "title": "Лобна ботулінотерапія 1-",
         "value": "forehead-botulinum-therapy-1",
-        "path": "/forehead-botulinum-therapy-1"
-      },
-      {
-        "id": 2,
-        "title": "Лобна ботулінотерапія 1-",
-        "value": "forehead-botulinum-therapy-2",
-        "path": "/forehead-botulinum-therapy-2"
-      },
-      {
-        "id": 3,
-        "title": "Лобна ботулінотерапія 1-",
-        "value": "forehead-botulinum-therapy-3",
-        "path": "/forehead-botulinum-therapy-3"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Контурна пластика обличчя",
-    "path": "facial-contouring",
-    "courses": [
-      {
-        "id": 1,
-        "title": "Контурна пластика обличчя 1-",
-        "value": "facial-contouring-1",
-        "path": "/facial-contouring-1"
-      },
-      {
-        "id": 2,
-        "title": "Контурна пластика обличчя 2-",
-        "value": "facial-contouring-2",
-        "path": "/facial-contouring-2"
-      },
-      {
-        "id": 3,
-        "title": "Контурна пластика обличчя 1-",
-        "value": "facial-contouring-3",
-        "path": "/facial-contouring-3"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Аугментація губ",
-    "path": "lip-augmentation",
-    "courses": [
-      {
-        "id": 1,
-        "title": "Аугментація губ 1-",
-        "value": "lip-augmentation-1",
-        "path": "/lip-augmentation-1"
-      },
-      {
-        "id": 2,
-        "title": "Аугментація губ 1-",
-        "value": "lip-augmentation-2",
-        "path": "/lip-augmentation-2"
-      },
-      {
-        "id": 3,
-        "title": "Аугментація губ 1-",
-        "value": "lip-augmentation-3",
-        "path": "/lip-augmentation-3"
-      }
-    ]
+        "path": "forehead-botulinum-therapy-1",
+        "description": "Лобна ботулінотерапія – asdansmfasdlnfl skdfjnlsadnflas sdlfknjsalfn lskdfnlsa k lksandf lkasnfdlsakf slfkdlasf lkasfdnl`f lk`fnlfa sfmasfd."
 
+      },
+      {
+        "id": 2,
+        "title": "Лобна ботулінотерапія 2",
+        "value": "forehead-botulinum-therapy-2",
+        "path": "forehead-botulinum-therapy-2",
+        "description": "Лобна ботулінотерапія – asdansmfasdlnfl skdfjnlsadnflas sdlfknjsalfn lskdfnlsa k lksandf lkasnfdlsakf slfkdlasf lkasfdnl`f lk`fnlfa sfmasfd."
+
+      },
+      {
+        "id": 3,
+        "title": "Лобна ботулінотерапія 3",
+        "value": "forehead-botulinum-therapy-3",
+        "path": "forehead-botulinum-therapy-3",
+        "description": "Лобна ботулінотерапія – asdansmfasdlnfl skdfjnlsadnflas sdlfknjsalfn lskdfnlsa k lksandf lkasnfdlsakf slfkdlasf lkasfdnl`f lk`fnlfa sfmasfd."
+
+      }
+    ]
   }
 ]

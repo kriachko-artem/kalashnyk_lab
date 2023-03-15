@@ -41,6 +41,7 @@
 .modalWrapper .modal form .input input {
   flex-grow: 1;
   border: none;
+  color: #0795e2;
 }
 .modalWrapper .modal form .input .selectorContainer {
   flex-grow: 1;
@@ -70,9 +71,13 @@
   border: 1px solid #c8ebfd;
   background-color: #f4fbff;
   border-radius: 5px;
+  transition: 0.2s;
 }
 .modalWrapper .modal .modalFooter .permission .checkbox.checked {
   background-color: #d1efff;
+}
+.modalWrapper .modal .modalFooter .permission .checkbox:hover {
+  box-shadow: 0 0 6px #c3eaff;
 }
 .modalWrapper .modal .modalFooter .send {
   width: 100%;

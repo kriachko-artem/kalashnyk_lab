@@ -1,0 +1,32 @@
+.preferences .titleBlock {
+  align-self: flex-start;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.preferences .preferencesListBlock {
+  width: 100%;
+}
+.preferences .preferencesListBlock .preferencesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.preferences .preferencesListBlock .preferencesList .preferenceItem {
+  display: flex;
+  column-gap: 15px;
+}
+.preferences .preferencesListBlock .preferencesList .preferenceItem .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebedec;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.preferences .preferencesListBlock .preferencesList .preferenceItem .description h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=preferences.css.map */

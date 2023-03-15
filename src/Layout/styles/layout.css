@@ -4,6 +4,10 @@ body .wrapper {
   flex-direction: column;
   position: relative;
 }
+body .wrapper main {
+  display: flex;
+  flex-direction: column;
+}
 body .wrapper .container {
   width: 90%;
   margin: 0 auto;

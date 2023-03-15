@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const coursesList = createSlice({
    name: 'coursesList',
    initialState: {
-      courses: []
+      courses: null
    },
    reducers: {
       setCourses(state, action){

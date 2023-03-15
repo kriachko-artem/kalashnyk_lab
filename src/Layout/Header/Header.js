@@ -1,9 +1,13 @@
 import './styles/header.css'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {useState} from "react";
-import {IoChevronDownOutline} from "react-icons/io5";
-import {motion, useTransform} from "framer-motion";
+import { motion, useTransform} from "framer-motion";
+import {useOutsideClick} from "../../hooks/useOutsideClick";
+
+
+
 import {CoursesListModal} from "../../components/CoursesListModal/CoursesListModal";
+import {IoChevronDownOutline} from "react-icons/io5";
 
 
 export function Header({offsetY, scrollY}) {
@@ -13,11 +17,7 @@ export function Header({offsetY, scrollY}) {
    const styles = {
       height: useTransform(scrollY, offsetY, headerSizes),
    };
-   const [opened,setOpened] = useState(false);
 
-   const openClose = () => {
-     setOpened(!opened)
-   }
 
    return (
       <motion.header style={styles}>
@@ -27,18 +27,21 @@ export function Header({offsetY, scrollY}) {
          <nav>
             <ul className={'navItems'}>
                <li className="item">
-                  <Link to={'/'}>
+                  <NavLink to={'/'}>
                      На початок
-                  </Link>
+                  </NavLink>
                </li>
-               <li onClick={()=>setOpened(true)} className={'item item_select'}>Курси
-                  <span className={'iconHolder'}><IoChevronDownOutline /></span>
-                  {opened ? <CoursesListModal close={openClose} opened={opened} /> : null}
+               <li className={'item item_select'}>
+                  <NavLink to={'/courses'} className={'item_select_label'}>
+                     <span>Курси</span>
+                     <span className={'iconHolder'}><IoChevronDownOutline /></span>
+                  </NavLink>
+                  <CoursesListModal/>
                </li>
                <li className="item">
-                  <Link to={'/contacts'}>
+                  <NavLink to={'/contacts'}>
                      Контакти
-                  </Link>
+                  </NavLink>
                </li>
             </ul>
          </nav>

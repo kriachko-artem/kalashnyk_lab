@@ -1,10 +1,20 @@
 import './styles/consultationModal.css'
 import {useDispatch, useSelector} from "react-redux";
 import {hideModal} from "../../store/slices/consultationModal";
-import { useState} from "react";
+import {useEffect, useState} from "react";
 import {Selector} from "../Selector/Selector";
 import { IoClose, IoCheckmarkSharp } from "react-icons/io5";
+import {motion} from "framer-motion";
+
+
 export function ConsultationModal () {
+
+   useEffect(()=>{
+    document.querySelector('body').style.overflowY = 'hidden'
+      return ()=>{
+         document.querySelector('body').style.overflowY = 'visible'
+      }
+   })
    
    const coursesList = useSelector(state => state.coursesListReducer.courses);
    const dispatch = useDispatch();
@@ -12,7 +22,7 @@ export function ConsultationModal () {
       event.preventDefault()
       dispatch(hideModal())
    }
-   
+
    const selectorOptions = coursesList.reduce((acc,item,index)=>{
       const result = item.courses.map(course=>(
          {
@@ -39,7 +49,11 @@ export function ConsultationModal () {
    };
    
   return (
-       <div className={'modalWrapper'}>
+       <motion.div className={'modalWrapper'}
+                   initial={{opacity: 0}}
+                   animate={{opacity: 1}}
+                   exit={{opacity: 0}}
+       >
          <div className="modal">
            <div className="modalHeader">
               <h1>Запит на консультацію</h1>
@@ -79,6 +93,6 @@ export function ConsultationModal () {
                <IoClose color={'grey'} size={'2em'}/>
             </button>
          </div>
-       </div>
+       </motion.div>
   )
 }

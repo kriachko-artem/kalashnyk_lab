@@ -1,11 +1,13 @@
 .questions .question-answer {
   width: 60%;
   padding: 0 20px;
-  background-color: #ebedec;
 }
 .questions .question-answer .questionItem {
   display: flex;
   flex-direction: column;
+}
+.questions .question-answer .questionItem:not(:last-child) {
+  border-bottom: 1px solid #ebedec;
 }
 .questions .question-answer .questionItem .question {
   display: flex;

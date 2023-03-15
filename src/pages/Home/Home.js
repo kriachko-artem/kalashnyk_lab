@@ -2,8 +2,8 @@ import './styles/home.css'
 import {Poster} from "../../components/Poster/Poster";
 import {Questions} from "../../components/Questions/Questions";
 import {ButtonConsultation} from "../../components/ButtonConsultation/ButtonConsultation";
-import {CourseTile} from "../../components/CourseTile/CourseTile";
-import {useSelector} from "react-redux";
+import {Preferences} from "../../components/Preferences/Preferences";
+import {CategoriesList} from "../../components/CategoriesList/CategoriesList";
 
 
 export function Home () {
@@ -17,7 +17,6 @@ export function Home () {
       }
    };
    
-   const coursesCategories = useSelector(state => state.coursesListReducer.courses);
 
   return (
        <div className={'home'}>
@@ -50,87 +49,8 @@ export function Home () {
                 </div>
              </div>
           </section>
-          <section className={'coursesList content'}>
-             <div className="container">
-                <div className={'titleContainer'}>
-                   <h1 className={'title'}>Категорії online курсів</h1>
-                   <span className={'description'}></span>
-                </div>
-                <ul className="categoriesList">
-                   {coursesCategories.map(item=>{
-                      return (
-                         <li key={item.id}>
-                            <CourseTile data={item}/>
-                         </li>
-                      )})}
-                </ul>
-             </div>
-          </section>
-          <section className={'preferences content'}>
-             <div className="container">
-                <div className="titleBlock">
-                   <h2 className={'title'}>Переваги навчання у Калашника Дениса</h2>
-                </div>
-                <div className="preferencesListBlock">
-                   <ul className={'preferencesList'}>
-                      <li className={'preferenceItem'}>
-                         <div className="icon">
-                            Icon
-                         </div>
-                         <div className={'description'}>
-                            <h5>Групи по 17 осіб</h5>
-                            <span>Викладач приділяє час кожному студенту.</span>
-                         </div>
-                      </li>
-                      <li className={'preferenceItem'}>
-                         <div className="icon">
-                            Icon
-                         </div>
-                         <div className={'description'}>
-                            <h5>Групи по 17 осіб</h5>
-                            <span>Викладач приділяє час кожному студенту.</span>
-                         </div>
-                      </li>
-                      <li className={'preferenceItem'}>
-                         <div className="icon">
-                            Icon
-                         </div>
-                         <div className={'description'}>
-                            <h5>Групи по 17 осіб</h5>
-                            <span>Викладач приділяє час кожному студенту.</span>
-                         </div>
-                      </li>
-                      <li className={'preferenceItem'}>
-                         <div className="icon">
-                            Icon
-                         </div>
-                         <div className={'description'}>
-                            <h5>Групи по 17 осіб</h5>
-                            <span>Викладач приділяє час кожному студенту.</span>
-                         </div>
-                      </li>
-                      <li className={'preferenceItem'}>
-                         <div className="icon">
-                            Icon
-                         </div>
-                         <div className={'description'}>
-                            <h5>Групи по 17 осіб</h5>
-                            <span>Викладач приділяє час кожному студенту.</span>
-                         </div>
-                      </li>
-                      <li className={'preferenceItem'}>
-                         <div className="icon">
-                            Icon
-                         </div>
-                         <div className={'description'}>
-                            <h5>Групи по 17 осіб</h5>
-                            <span>Викладач приділяє час кожному студенту.</span>
-                         </div>
-                      </li>
-                   </ul>
-                </div>
-             </div>
-          </section>
+          <CategoriesList to={'/courses/'}/>
+          <Preferences />
           <section className={'questions content'}>
              <div className={'titleContainer'}>
                 <h1 className={'title'}>Найчастіші запитання клієнтів та відповіді на них</h1>

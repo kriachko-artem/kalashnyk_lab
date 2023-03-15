@@ -1,6 +1,6 @@
 import './styles/poster.css'
 
-export function Poster ({title, description, style, children}) {
+export function Poster ({title = '', description = '', style = {}, children}) {
 
   return (
      <section className={'poster'} style={style.poster}>
