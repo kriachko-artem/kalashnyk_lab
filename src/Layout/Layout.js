@@ -6,6 +6,7 @@ import './styles/layout.css'
 import {ConsultationModal} from "../components/ConsultationModal/ConsultationModal";
 import {useSelector} from "react-redux";
 import {Loader} from "../components/Loader/Loader";
+import {SmallButton} from "../components/ButtonConsultation/SmallButton";
 
 export function Layout() {
 
@@ -21,6 +22,7 @@ export function Layout() {
                <Header offsetY={offsetY} scrollY={scrollY}/>
                <Main/>
                <Footer/>
+               <SmallButton offsetY={offsetY} scrollY={scrollY}/>
                <AnimatePresence>
                   {showConsultation && < ConsultationModal/>}
                </AnimatePresence>

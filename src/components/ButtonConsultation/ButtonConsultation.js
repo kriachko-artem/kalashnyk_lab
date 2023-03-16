@@ -1,19 +1,25 @@
 import './styles/buttonConsultation.css'
 import {useDispatch} from "react-redux";
 import {showModal} from "../../store/slices/consultationModal";
+import { motion, useTransform} from "framer-motion";
+import {MdOutlineQuestionAnswer} from "react-icons/md";
 
-export function ButtonConsultation ({style}) {
+export function ButtonConsultation (props) {
 
+   const headerSizes = [100, 50];
+
+   // const styles = {
+   //    height: useTransform(scrollY, offsetY, headerSizes),
+   // };
+   
    const dispatch = useDispatch();
-
-   const show = (event)=> {
-      event.preventDefault()
+   const show = ()=> {
       dispatch(showModal())
    }
 
   return (
-     <button onClick={show} className={'consultation'} style={style}>
-        Безкоштовна консультація
-     </button>
+        <motion.button onClick={show} className={`consultation ${props.small ? 'small' : ''}`} style={{...props.style}}>
+           {props.small ? <MdOutlineQuestionAnswer size={'30px'}/> : <span>Безкоштовна консультація</span>}
+        </motion.button>
   )
 }

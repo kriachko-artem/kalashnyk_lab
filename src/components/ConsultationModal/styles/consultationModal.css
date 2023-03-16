@@ -2,8 +2,8 @@
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: rgba(128, 128, 128, 0.18);
-  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -29,26 +29,41 @@
 .modalWrapper .modal form {
   flex-grow: 1;
 }
-.modalWrapper .modal form .input {
-  display: flex;
-  align-items: center;
+.modalWrapper .modal form .row {
   padding: 20px;
   border-top: 1px solid #ebedec;
+  display: flex;
+  flex-direction: column;
 }
-.modalWrapper .modal form .input:last-child {
+.modalWrapper .modal form .row:last-child {
   border-bottom: 1px solid #ebedec;
 }
-.modalWrapper .modal form .input input {
+.modalWrapper .modal form .row .input {
+  display: flex;
+  align-items: center;
+}
+.modalWrapper .modal form .row .input input {
   flex-grow: 1;
   border: none;
-  color: #0795e2;
+  color: #0795e2 !important;
+  background-color: unset !important;
 }
-.modalWrapper .modal form .input .selectorContainer {
+.modalWrapper .modal form .row .input .selectorContainer {
   flex-grow: 1;
 }
-.modalWrapper .modal form .input label {
-  width: 40%;
+.modalWrapper .modal form .row .input label {
+  width: 35%;
   color: #8d949e;
+}
+.modalWrapper .modal form .row .notValid {
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: red;
+}
+.modalWrapper .modal form .row .notValid span {
+  display: block;
+  padding-top: 15px;
 }
 .modalWrapper .modal .modalFooter {
   padding: 20px;
@@ -90,18 +105,27 @@
 .modalWrapper .modal .modalFooter .send:hover {
   background-color: #62ea14;
 }
+.modalWrapper .modal .modalFooter .send:disabled {
+  background-color: grey;
+}
 .modalWrapper .modal button.closeButton {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
   top: 10px;
   right: 10px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  overflow: hidden;
+  padding: unset;
   border: none;
   cursor: pointer;
+}
+.modalWrapper .modal button.closeButton:hover svg {
+  color: crimson !important;
 }
 
 /*# sourceMappingURL=consultationModal.css.map */

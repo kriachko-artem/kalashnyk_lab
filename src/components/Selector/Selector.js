@@ -5,7 +5,7 @@ import {Dropdown} from "./Dropdown";
 import {useOutsideClick} from "../../hooks/useOutsideClick";
 import {AnimatePresence} from "framer-motion";
 
-export function Selector ({options}) {
+export function Selector ({options, checkedValue, autoClose = true}) {
 
    const [opened, setOpened] = useState(false);
 
@@ -16,6 +16,8 @@ export function Selector ({options}) {
 
    const onChecked = (item)=>{
       setChecked(item)
+      if (autoClose) openClose()
+      checkedValue(item)
    }
 
    const ref = useOutsideClick(()=>setOpened(false));
