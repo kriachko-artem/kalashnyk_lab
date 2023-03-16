@@ -41,6 +41,7 @@
 .headerModal .submenuColumn .subItem {
   cursor: pointer;
   padding: 20px;
+  color: #222222;
 }
 .headerModal .submenuColumn .subItem:not(:last-child) {
   border-bottom: 1px solid #ebedec;

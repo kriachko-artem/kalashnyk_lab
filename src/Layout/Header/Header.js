@@ -34,7 +34,7 @@ export function Header({offsetY, scrollY}) {
                <li className={'item item_select'}>
                   <NavLink to={'/courses'} className={'item_select_label'}>
                      <span>Курси</span>
-                     <span className={'iconHolder'}><IoChevronDownOutline /></span>
+                     <span className={'iconHolder'}><IoChevronDownOutline color={'#222'}/></span>
                   </NavLink>
                   <CoursesListModal/>
                </li>

@@ -39,6 +39,7 @@
     .subItem{
       cursor: pointer;
       padding: 20px;
+      color: #222222;
       &:not(:last-child){
         border-bottom: 1px solid #ebedec;
       }
