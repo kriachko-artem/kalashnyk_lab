@@ -10,7 +10,7 @@ import {AnimatePresence, motion} from "framer-motion";
 export function ConsultationModal() {
 
    useEffect(() => {
-      document.querySelector('body').style.overflowY = 'hidden'
+      document.querySelector('body').style.overflow = 'hidden'
       return () => {
          document.querySelector('body').style.overflowY = 'visible'
       }
