@@ -127,4 +127,13 @@
       }
     }
   }
+  @media screen and (max-width: 500px){
+    .modal{
+      width: 100%;
+      overflow-y: scroll;
+      height: 100%;
+      border-radius: unset;
+      max-height: 80%;
+    }
+  }
 }

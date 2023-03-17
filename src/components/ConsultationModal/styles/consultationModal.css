@@ -128,5 +128,14 @@
 .modalWrapper .modal button.closeButton:hover svg {
   color: crimson !important;
 }
+@media screen and (max-width: 500px) {
+  .modalWrapper .modal {
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
+    border-radius: unset;
+    max-height: 80%;
+  }
+}
 
 /*# sourceMappingURL=consultationModal.css.map */
