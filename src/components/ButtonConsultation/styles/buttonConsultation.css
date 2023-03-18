@@ -13,11 +13,13 @@ button.consultation span {
   padding: 0 10px;
 }
 button.consultation.small {
-  position: fixed;
-  will-change: bottom;
-  left: 90%;
   padding: 15px;
   border-radius: 50%;
+  opacity: 0.5;
+  transition: 0.3s opacity;
+}
+button.consultation.small:hover {
+  opacity: 1;
 }
 button.consultation.small svg {
   pointer-events: none;
@@ -27,6 +29,12 @@ button.consultation:hover {
 }
 button.consultation:active {
   background-color: #4ed401;
+}
+
+.buttonHolder {
+  position: fixed;
+  will-change: bottom;
+  right: 20px;
 }
 
 /*# sourceMappingURL=buttonConsultation.css.map */

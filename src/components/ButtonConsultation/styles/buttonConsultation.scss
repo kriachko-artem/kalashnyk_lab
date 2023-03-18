@@ -13,11 +13,13 @@ button{
       padding: 0 10px;
     }
     &.small{
-      position: fixed;
-      will-change: bottom;
-      left: 90%;
       padding: 15px;
       border-radius: 50%;
+      opacity: 0.5;
+      transition: 0.3s opacity;
+      &:hover{
+        opacity: 1;
+      }
       svg{
         pointer-events: none;
       }
@@ -29,4 +31,9 @@ button{
       background-color: #4ed401;
     }
   }
+}
+.buttonHolder{
+  position: fixed;
+  will-change: bottom;
+  right: 20px;
 }

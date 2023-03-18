@@ -12,7 +12,7 @@ export function SmallButton({scrollY}) {
       //Активация эффекта прилипания
       toCling(button.current)
    })
-   const position = [-60, 30];
+   const position = [-60, 20];
    const offsetY = [100, 400];
 
    const styles = {
@@ -26,8 +26,10 @@ export function SmallButton({scrollY}) {
    }
 
    return (
-      <motion.button ref={button} onClick={show} className={'consultation small'} style={styles}>
-         <MdOutlineQuestionAnswer size={'30px'}/>
-      </motion.button>
+      <motion.div className={'buttonHolder'} style={styles}>
+         <button ref={button} onClick={show} className={'consultation small'}>
+            <MdOutlineQuestionAnswer size={'30px'}/>
+         </button>
+      </motion.div>
    )
 }
