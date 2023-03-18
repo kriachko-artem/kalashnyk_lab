@@ -1,12 +1,12 @@
+import './styles/layout.css'
 import {Header} from "./Header/Header";
 import {Footer} from "./Footer/Footer";
 import {Main} from "./Main/Main";
 import {AnimatePresence, useScroll} from "framer-motion";
-import './styles/layout.css'
-import {ConsultationModal} from "../components/ConsultationModal/ConsultationModal";
 import {useSelector} from "react-redux";
 import {Loader} from "../components/Loader/Loader";
 import {SmallButton} from "../components/ButtonConsultation/SmallButton";
+import {ModalWrapper} from "../components/ConsultationModal/ModalWrapper";
 
 export function Layout() {
 
@@ -24,7 +24,7 @@ export function Layout() {
                <Footer/>
                <SmallButton offsetY={offsetY} scrollY={scrollY}/>
                <AnimatePresence>
-                  {showConsultation && < ConsultationModal/>}
+                  {showConsultation && <ModalWrapper/>}
                </AnimatePresence>
             </Loader>
          </div>

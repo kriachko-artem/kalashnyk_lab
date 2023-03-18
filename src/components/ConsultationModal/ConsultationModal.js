@@ -1,20 +1,16 @@
-import './styles/consultationModal.css'
+import './styles/consultationForm.css'
 import {useDispatch, useSelector} from "react-redux";
 import {hideModal} from "../../store/slices/consultationModal";
-import {useEffect, useState} from "react";
+import {useRef, useState} from "react";
 import {Selector} from "../Selector/Selector";
 import {IoCheckmarkSharp, IoClose} from "react-icons/io5";
 import {AnimatePresence, motion} from "framer-motion";
+import {useOutsideClick} from "../../hooks/useOutsideClick";
 
 
-export function ConsultationModal() {
+export function ConsultationModal({closable = false}) {
 
-   useEffect(() => {
-      document.querySelector('body').style.overflow = 'hidden'
-      return () => {
-         document.querySelector('body').style.overflowY = 'visible'
-      }
-   })
+   const form = useRef(null);
 
    const coursesList = useSelector(state => state.coursesListReducer.courses);
    const dispatch = useDispatch();
@@ -78,111 +74,140 @@ export function ConsultationModal() {
    const checkedCourse = (checked) => {
       setCourse(checked)
    }
-   const form = {
+   const formData1 = {
       name, email, phone,
       course: course.label
    }
-   const sendForm = () => {
-      console.log("form", form)
-      hide()
+   const clearForm = () => {
+      setName('')
+      setEmail('')
+      setPhone('')
+      setCourse('')
+      setPermission(false)
    }
+   const sendForm = () => {
+      const formData = new FormData();
+      formData.append("Name", name)
+      formData.append("Email", email)
+      formData.append("Phone", phone)
+      formData.append("Course", course.label)
+
+      // fetch('https://script.google.com/macros/s/AKfycbw7hrgXvqRWR2NuRAI9joP3HhPWhl0BIa6jLhvenESBRUfT5FlhJbDcNU7KyaGL9OnxQg/exec',{
+      //    method: 'POST',
+      //    body: formData,
+      // })
+      fetch(
+         "https://script.google.com/macros/s/AKfycbxZZR7Yjr7-zSdRRMveF1uBzxJUA02jcKTlxG95UoGkfJMcOzJBtSuSKiPhiuud26AlDg/exec",
+         {
+            method: "POST",
+            body: formData
+         }
+      )
+         .then(response => response.json())
+         .then(result => {
+            console.log("formData1",formData1)
+            clearForm()
+         })
+         .catch(err => console.error(err))
+
+      if (closable) hide()
+   }
+
+   const modal = useOutsideClick(hide);
 
 
    return (
-      <motion.div className={'modalWrapper'}
-                  initial={{opacity: 0}}
-                  animate={{opacity: 1}}
-                  exit={{opacity: 0}}>
-         <div className="modal">
-            <div className="modalHeader">
-               <h1>Запит на консультацію</h1>
-               <h5>Залиште ваші контактні дані, і ми вам обов'язково зателефонуємо!</h5>
+      <div ref={modal} className="consultationForm">
+         <div className="modalHeader">
+            <h1>Запит на консультацію</h1>
+            <h5>Залиште ваші контактні дані, і ми вам обов'язково зателефонуємо!</h5>
+         </div>
+         <form ref={form}>
+            <div className="row">
+               <div className="inputName input">
+                  <label htmlFor={'name'}>Імʼя, Прізвище</label>
+                  <input onChange={inputName}
+                         onBlur={checkValidName}
+                         id={'name'} type="text"
+                         placeholder={'Артем Крячко'}/>
+               </div>
+               <AnimatePresence>
+                  {!nameValid && <motion.div
+                     initial={{height: 0}}
+                     animate={{height: 'auto'}}
+                     exit={{height: 0}}
+                     transition={{duration: 0.2, ease: 'easeOut'}}
+                     className={'notValid'}>
+                     <span className={'notValid'}>Перевірте правильність імені та прізвища</span>
+                  </motion.div>}
+               </AnimatePresence>
             </div>
-            <form>
-               <div className="row">
-                  <div className="inputName input">
-                     <label htmlFor={'name'}>Імʼя, Прізвище</label>
-                     <input onChange={inputName}
-                            onBlur={checkValidName}
-                            id={'name'} type="text"
-                            placeholder={'Артем Крячко'}/>
-                  </div>
-                  <AnimatePresence>
-                     {!nameValid && <motion.div
-                        initial={{height: 0}}
-                        animate={{height: 'auto'}}
-                        exit={{height: 0}}
-                        transition={{duration: 0.2, ease: 'easeOut'}}
-                        className={'notValid'}>
-                        <span className={'notValid'}>Перевірте правильність імені та прізвища</span>
-                     </motion.div>}
-                  </AnimatePresence>
+            <div className="row">
+               <div className="inputName input">
+                  <label htmlFor={'lastName'}>Email</label>
+                  <input onChange={inputMail}
+                         onBlur={checkValidMail}
+                         id={'lastName'} type="text"
+                         placeholder={'artem@gmail.com'}/>
                </div>
-               <div className="row">
-                  <div className="inputName input">
-                     <label htmlFor={'lastName'}>Email</label>
-                     <input onChange={inputMail}
-                            onBlur={checkValidMail}
-                            id={'lastName'} type="text"
-                            placeholder={'artem@gmail.com'}/>
-                  </div>
-                  <AnimatePresence>
-                     {!mailValid && <motion.div
-                        initial={{height: 0}}
-                        animate={{height: 'auto'}}
-                        exit={{height: 0}}
-                        transition={{duration: 0.2, ease: 'easeOut'}}
-                        className={'notValid'}>
-                        <span>Перевірте правильність поштового адресу</span>
-                     </motion.div>}
-                  </AnimatePresence>
+               <AnimatePresence>
+                  {!mailValid && <motion.div
+                     initial={{height: 0}}
+                     animate={{height: 'auto'}}
+                     exit={{height: 0}}
+                     transition={{duration: 0.2, ease: 'easeOut'}}
+                     className={'notValid'}>
+                     <span>Перевірте правильність поштового адресу</span>
+                  </motion.div>}
+               </AnimatePresence>
+            </div>
+            <div className="row">
+               <div className="inputName input">
+                  <label htmlFor={'phone'}>Телефон</label>
+                  <input onChange={inputPhone}
+                         onBlur={checkValidPhone}
+                         id={'phone'} type="tel"
+                         placeholder={'+38 (050) 087-64-55'}/>
                </div>
-               <div className="row">
-                  <div className="inputName input">
-                     <label htmlFor={'phone'}>Телефон</label>
-                     <input onChange={inputPhone}
-                            onBlur={checkValidPhone}
-                            id={'phone'} type="tel"
-                            placeholder={'+38 (050) 087-64-55'}/>
-                  </div>
-                  <AnimatePresence>
-                     {!phoneValid && <motion.div
-                        initial={{height: 0}}
-                        animate={{height: 'auto'}}
-                        exit={{height: 0}}
-                        transition={{duration: 0.2, ease: 'easeOut'}}
-                        className={'notValid'}>
-                        <span>Перевірте правильність номеру телефону</span>
-                     </motion.div>}
-                  </AnimatePresence>
-               </div>
-               <div className="row">
-                  <div className="inputCourses input">
-                     <label>Курс</label>
-                     <div className="selectorContainer">
-                        <Selector options={selectorOptions} checkedValue={checkedCourse}/>
-                     </div>
+               <AnimatePresence>
+                  {!phoneValid && <motion.div
+                     initial={{height: 0}}
+                     animate={{height: 'auto'}}
+                     exit={{height: 0}}
+                     transition={{duration: 0.2, ease: 'easeOut'}}
+                     className={'notValid'}>
+                     <span>Перевірте правильність номеру телефону</span>
+                  </motion.div>}
+               </AnimatePresence>
+            </div>
+            <div className="row">
+               <div className="inputCourses input">
+                  <label>Курс</label>
+                  <div className="selectorContainer">
+                     <Selector options={selectorOptions} checkedValue={checkedCourse}/>
                   </div>
                </div>
-            </form>
-            <div className="modalFooter">
-               <div className="permission">
-                  <span onClick={() => setPermission(!permission)}
-                        className={`checkbox iconHolder ${permission ? 'checked' : ''}`}>
+            </div>
+         </form>
+         <div className="modalFooter">
+            <div className="permission"
+                 onClick={() => setPermission(!permission)}
+            >
+                  <span className={`checkbox iconHolder ${permission ? 'checked' : ''}`}>
                      {permission ? <IoCheckmarkSharp color={'#0795e2'}/> : null}
                   </span>
-                  <label>Згоден на обробку персональних даних</label>
-               </div>
-               <button className={'send'}
-                       onClick={sendForm}
-                       disabled={!allValid}>Залишити запит
-               </button>
+               <label>Згоден на обробку персональних даних</label>
             </div>
+            <button className={'send'}
+                    onClick={sendForm}
+                    disabled={!allValid}>Залишити запит
+            </button>
+         </div>
+         {closable &&
             <button onClick={hide} className={'closeButton'}>
                <IoClose color={'grey'} size={'100px'}/>
             </button>
-         </div>
-
-      </motion.div>
+         }
+      </div>
    )
 }
