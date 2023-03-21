@@ -9,13 +9,11 @@ export function CoursesListModal () {
    const firstColumn = useSelector(state => state.coursesListReducer.courses);
 
    const [checkedInFirstColumn,setCheckedInFirstColumn] = useState(0);
-   const [checkedInSecondColumn,setCheckedInSecondColumn] = useState(0);
    const secondColumn = firstColumn[checkedInFirstColumn].courses;
    const subCategoriesAndCourses = useRef(null);
 
    const checkFirst = (index) => {
       setCheckedInFirstColumn(index)
-      setCheckedInSecondColumn(0)
    }
 
    return (

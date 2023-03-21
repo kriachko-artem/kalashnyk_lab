@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {NotFound} from "../NotFound/NotFound";
 import {Poster} from "../../components/Poster/Poster";
 import {CategoriesList} from "../../components/CategoriesList/CategoriesList";
-import {ConsultationModal} from "../../components/ConsultationModal/ConsultationModal";
+import {ConsultationForm} from "../../components/ConsultationForm/ConsultationForm";
 
 
 export function Course () {
@@ -18,7 +18,7 @@ export function Course () {
            <Poster title={data.title} description={data.description}/>
            <CategoriesList to={'/courses/'}/>
            <section className={'consultation content'}>
-              <ConsultationModal/>
+              <ConsultationForm/>
            </section>
         </>
   )

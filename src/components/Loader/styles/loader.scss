@@ -12,8 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: loading 0.5s steps(8, start) infinite;
     position: absolute;
+    animation: loading 0.5s steps(8, start) infinite;
     @keyframes loading {
       100%{transform: rotate(360deg)}
     }

@@ -1,17 +1,11 @@
 import './styles/buttonConsultation.css'
 import {useDispatch} from "react-redux";
 import {showModal} from "../../store/slices/consultationModal";
-import { motion, useTransform} from "framer-motion";
+import { motion } from "framer-motion";
 import {MdOutlineQuestionAnswer} from "react-icons/md";
 
 export function ButtonConsultation (props) {
 
-   const headerSizes = [100, 50];
-
-   // const styles = {
-   //    height: useTransform(scrollY, offsetY, headerSizes),
-   // };
-   
    const dispatch = useDispatch();
    const show = ()=> {
       dispatch(showModal())
