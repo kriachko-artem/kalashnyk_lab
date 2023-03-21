@@ -1,10 +1,8 @@
-import './styles/consultationModal.css'
+import './styles/modalWrapper.css'
 import {motion} from "framer-motion";
 import {useEffect} from "react";
-import {ConsultationModal} from "./ConsultationModal";
 
-
-export function ModalWrapper () {
+export function ModalWrapper ({children}) {
 
    useEffect(() => {
       document.querySelector('body').style.overflow = 'hidden'
@@ -13,13 +11,12 @@ export function ModalWrapper () {
       }
    })
 
-
   return (
      <motion.div className={'modalWrapper'}
                  initial={{opacity: 0}}
                  animate={{opacity: 1}}
                  exit={{opacity: 0}}>
-        <ConsultationModal closable={true}/>
+        {children}
      </motion.div>
   )
 }
