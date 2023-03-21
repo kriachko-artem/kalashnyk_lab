@@ -101,8 +101,12 @@ export function ConsultationForm({closable = false}) {
             {!status && <motion.div
                key={"form"}
                exit={{opacity: 0, scale: 0.1}}
-               transition={{duration: 0.3, ease: "easeIn"}}
-            >
+               transition={{duration: 0.3, ease: "easeIn"}}>
+               {closable &&
+                  <button onClick={hide} className={'closeButton'}>
+                     <IoClose color={'grey'} size={'100px'}/>
+                  </button>
+               }
                <div className="modalHeader">
                   <h1>Запит на консультацію</h1>
                   <h5>Залиште ваші контактні дані, і ми вам обов'язково зателефонуємо!</h5>
@@ -190,11 +194,6 @@ export function ConsultationForm({closable = false}) {
                           disabled={!allValid}>Залишити запит
                   </button>
                </div>
-               {closable &&
-                  <button onClick={hide} className={'closeButton'}>
-                     <IoClose color={'grey'} size={'100px'}/>
-                  </button>
-               }
             </motion.div>}
             {status === 'pending' &&
                <div
@@ -208,6 +207,11 @@ export function ConsultationForm({closable = false}) {
             {status === 'sent' &&
                <div className={'sent sentForm'}
                     key={'sent'}>
+                  {closable &&
+                     <button onClick={hide} className={'closeButton'}>
+                        <IoClose color={'grey'} size={'100px'}/>
+                     </button>
+                  }
                   <div className="img-holder">
                      <img src={successImg} alt="Success"/>
                   </div>
