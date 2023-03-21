@@ -8,8 +8,11 @@ section.consultation{
   border: 1px solid #ebedec;
   border-radius: 10px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   position: relative;
+  transition: 0.8s;
+  will-change: height;
   .modalHeader{
     padding: 20px;
     h1{
@@ -118,5 +121,58 @@ section.consultation{
     &:hover svg{
       color: crimson !important;
     }
+  }
+  .sentForm{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: show 0.5s ease-in forwards;
+    will-change: opacity;
+    box-sizing: border-box;
+    .img-holder{
+      width: 50%;
+      img{
+        width: 100%;
+      }
+    }
+    &.pending{
+      .img-holder{
+        animation: loading 0.5s steps(8, start) infinite;
+        img{
+          transform: translateX(-2.2%);
+        }
+      }
+      @keyframes loading {
+        100%{transform: rotate(360deg)}
+      }
+    }
+    &.sent{
+      .sentMessage{
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        text-align: center;
+        margin-top: 25px;
+        h2{
+          font-size: 27px;
+          color: #0795e2;
+        }
+        span{
+          margin-top: 15px;
+          font-size: 20px;
+          color: #8d949e;
+        }
+      }
+      img{
+        transform: none;
+      }
+    }
+  }
+  @keyframes show {
+    100%{opacity: 1}
   }
 }
