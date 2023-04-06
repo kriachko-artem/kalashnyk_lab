@@ -21,8 +21,6 @@ export function sendToSheets(data){
       }
    )
       .then(response => response.json())
-      .then( ()=> {
-      })
       .catch(err => console.error(err))
 }
 export function sendToTelegram(data){
@@ -39,3 +37,5 @@ export function sendToTelegram(data){
    }
    return axios.post(URL, request).then(r => console.log(r.data))
 }
+
+
