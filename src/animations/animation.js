@@ -31,7 +31,7 @@ export function toCling(element) {
       gsap.to(element,{
          translateX: to.x,
          translateY: to.y,
-         duration: 1,
+         duration: 2,
          ease: "elastic.out(1, 0.3)",
       })
    }
