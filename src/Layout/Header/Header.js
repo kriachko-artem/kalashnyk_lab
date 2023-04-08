@@ -1,6 +1,5 @@
 import './styles/header.css'
 import {Link, NavLink} from "react-router-dom";
-import {motion, useTransform} from "framer-motion";
 import {CoursesListModal} from "../../components/CoursesListModal/CoursesListModal";
 import {IoChevronDownOutline} from "react-icons/io5";
 

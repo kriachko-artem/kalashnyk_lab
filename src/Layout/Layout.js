@@ -14,16 +14,15 @@ export function Layout() {
    const showConsultation = useSelector(state => state.consultationModalReducer.show);
 
    const {scrollY} = useScroll();
-   const offsetY = [0, 100];
 
    return (
       <>
          <div className={'wrapper'}>
             <Loader>
-               <Header offsetY={offsetY} scrollY={scrollY}/>
+               <Header scrollY={scrollY}/>
                <Main/>
                <Footer/>
-               <SmallButton offsetY={offsetY} scrollY={scrollY}/>
+               <SmallButton scrollY={scrollY}/>
                <AnimatePresence>
                   {showConsultation && <ModalWrapper>
                      <ConsultationForm closable={true}/>

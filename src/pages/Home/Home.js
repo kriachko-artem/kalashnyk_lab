@@ -8,9 +8,6 @@ import {CategoriesList} from "../../components/CategoriesList/CategoriesList";
 
 export function Home () {
    const posterStyles = {
-      poster:{
-         alignItems: 'flex-start',
-      },
       content: {
          alignSelf: 'flex-start',
          textAlign: 'left',
