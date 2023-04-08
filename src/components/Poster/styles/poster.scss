@@ -1,6 +1,6 @@
 .poster{
   width: 100%;
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -29,13 +29,15 @@
     width: 100%;
     height: 100%;
     &.background{
+      width: 150%;
+      border-radius: 0 0 50% 50%;
       top: 0;
       position: absolute;
       z-index: -1;
       height: 100%;
       background-color: grey;
     }
-    .background{
+    .background-img{
       height: 100%;
       display: flex;
       align-items: center;
