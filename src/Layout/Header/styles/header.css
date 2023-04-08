@@ -1,13 +1,18 @@
 header {
   width: 100%;
-  position: sticky;
+  height: 70px;
+  position: fixed;
   top: 0;
   background-color: rgba(235, 237, 236, 0.5);
   border-bottom: 1px solid rgba(128, 128, 128, 0.19);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: stretch;
   column-gap: 50px;
   z-index: 10;
+}
+header .container {
+  justify-content: space-between;
 }
 header .logo {
   height: 100%;
@@ -20,7 +25,6 @@ header .logo {
 header nav {
   display: flex;
   align-items: center;
-  flex-grow: 1;
   column-gap: 10px;
 }
 header nav .navItems {
