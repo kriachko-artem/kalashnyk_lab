@@ -61,9 +61,14 @@ body{
           .title {
             font-weight: 600;
             font-size: 40px;
-            color: #000;
             margin-bottom: 30px;
             line-height: 1.3;
+            background: linear-gradient(90.67deg, #9E8D68 26.97%, #C7BAA0 87.78%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            position: relative;
           }
           .description {
             font-size: 22px;

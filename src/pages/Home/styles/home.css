@@ -22,7 +22,7 @@
   margin-bottom: 20px;
 }
 .home .categoriesList {
-  padding: 80px 0;
+  padding: 0 0 80px 0;
   position: relative;
   overflow: hidden;
 }
@@ -36,6 +36,9 @@
   background: -webkit-linear-gradient(180deg, rgb(17, 17, 17), rgb(39, 39, 39));
   background: -moz-linear-gradient(180deg, rgb(17, 17, 17), rgb(39, 39, 39));
   background: linear-gradient(180deg, rgb(17, 17, 17), rgb(39, 39, 39));
+}
+.home .categoriesList .titleContainer {
+  margin-top: 100px;
 }
 .home .backgroundSection {
   background-color: #232323;

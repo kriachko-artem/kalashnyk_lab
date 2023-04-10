@@ -8,15 +8,17 @@ export function CategoriesList ({to}) {
 
   return (
        <section className={'categoriesList content'}>
-          <div className={'titleContainer'}>
-             <h1 className={'title'}>Категорії online курсів</h1>
-             <span className={'description'}></span>
+          <div className="container">
+             <div className={'titleContainer'}>
+                <h1 className={'title'}>Категорії online курсів</h1>
+                <span className={'description'}></span>
+             </div>
+            <ul className="list">
+               {coursesList.map(item=>{
+                  return (<CategoryTile to={to} key={item.id} data={item}/>)
+               })}
+            </ul>
           </div>
-         <ul className="list">
-            {coursesList.map(item=>{
-               return (<CategoryTile to={to} key={item.id} data={item}/>)
-            })}
-         </ul>
        </section>
   )
 }

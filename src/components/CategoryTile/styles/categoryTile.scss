@@ -1,19 +1,25 @@
 .categoryTile{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 200px;
+  width: 30%;
   position: relative;
+  .categoryLabel{
+    width: 162px;
+    height: 221px;
+    background-color: #ebedec;
+    border-radius: 40px 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
   .categoryTile_title{
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 400;
     color: #fff;
     position: relative;
     z-index: 1;
   }
   .background{
-    position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
