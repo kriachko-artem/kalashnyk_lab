@@ -6,9 +6,6 @@ import {ButtonConsultation} from "../../components/ButtonConsultation/ButtonCons
 export function Courses () {
 
    const posterStyles = {
-      poster:{
-         alignItems: 'flex-start',
-      },
       content: {
          alignSelf: 'flex-start',
          textAlign: 'left',
