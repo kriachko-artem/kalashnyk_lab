@@ -1,3 +1,26 @@
+.home .about .container {
+  column-gap: 15px;
+}
+.home .about .img-holder {
+  flex-basis: 40%;
+  background-color: grey;
+}
+.home .about .textBlock {
+  flex-basis: 60%;
+  text-align: center;
+}
+.home .about .textBlock .title {
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 50px;
+}
+.home .about .textBlock .textContent {
+  line-height: 1.2;
+  font-size: 22px;
+}
+.home .about .textBlock p {
+  margin-bottom: 20px;
+}
 .home .categoriesList {
   background-color: azure;
   padding: 80px 0;

@@ -49,14 +49,6 @@ body .wrapper main section.content {
   align-items: center;
   padding-top: 80px;
 }
-body .wrapper main section.content .textContent {
-  line-height: 1.5;
-  font-size: 20px;
-  width: 80%;
-}
-body .wrapper main section.content .textContent p {
-  margin-bottom: 20px;
-}
 body .wrapper main section .titleContainer {
   font-family: "Lack";
   display: flex;
