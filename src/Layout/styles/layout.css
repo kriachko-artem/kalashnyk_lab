@@ -1,5 +1,5 @@
 body * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lack", sans-serif;
 }
 body .wrapper {
   min-height: 100vh;
@@ -58,6 +58,7 @@ body .wrapper main section.content .textContent p {
   margin-bottom: 20px;
 }
 body .wrapper main section .titleContainer {
+  font-family: "Lack";
   display: flex;
   flex-direction: column;
   align-items: center;
