@@ -1,4 +1,7 @@
 .preferences{
+  .container{
+    flex-direction: column;
+  }
   .titleBlock{
     align-self: flex-start;
     font-size: 25px;

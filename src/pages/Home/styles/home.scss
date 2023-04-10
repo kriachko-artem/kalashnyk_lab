@@ -25,10 +25,26 @@
     }
   }
   .categoriesList{
-    background-color: azure;
     padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 100%;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+      background: -webkit-linear-gradient(180deg, rgb(17, 17, 17), rgb(39, 39, 39));
+      background: -moz-linear-gradient(180deg, rgb(17, 17, 17), rgb(39, 39, 39));
+      background: linear-gradient(180deg, rgb(17, 17, 17), rgb(39, 39, 39));
+    }
+  }
+  .preferences{
   }
   .questions{
-    background-color: azure;
+  }
+  .backgroundSection{
+    background-color: #232323;
   }
 }

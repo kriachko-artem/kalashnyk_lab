@@ -46,15 +46,17 @@ export function Home () {
                 </div>
              </div>
           </section>
-          <CategoriesList to={'/courses/'}/>
-          <Preferences />
-          <section className={'questions content'}>
-             <div className={'titleContainer'}>
-                <h1 className={'title'}>Найчастіші запитання клієнтів та відповіді на них</h1>
-                <span className={'description'}></span>
-             </div>
-             <Questions />
-          </section>
+          <div className="backgroundSection">
+             <Preferences />
+             <CategoriesList to={'/courses/'}/>
+             <section className={'questions content'}>
+                <div className={'titleContainer'}>
+                   <h1 className={'title'}>Найчастіші запитання клієнтів та відповіді на них</h1>
+                   <span className={'description'}></span>
+                </div>
+                <Questions />
+             </section>
+          </div>
        </div>
   )
 }

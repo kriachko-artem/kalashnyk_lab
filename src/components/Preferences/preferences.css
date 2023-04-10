@@ -1,3 +1,6 @@
+.preferences .container {
+  flex-direction: column;
+}
 .preferences .titleBlock {
   align-self: flex-start;
   font-size: 25px;
