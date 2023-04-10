@@ -1,5 +1,5 @@
 import './styles/loader.css'
-import loader from '../../assets/img/loader.svg'
+import loader from '../../global/assets/img/loader.svg'
 import {useSelector} from "react-redux";
 
 

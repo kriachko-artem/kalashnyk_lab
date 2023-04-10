@@ -1,6 +1,6 @@
 import './styles/consultationForm.css'
-import pendingImg from '../../assets/img/loader.svg'
-import successImg from '../../assets/img/success.svg'
+import pendingImg from '../../global/assets/img/loader.svg'
+import successImg from '../../global/assets/img/success.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {hideModal} from "../../store/slices/consultationModal";
 import {useRef, useState} from "react";
