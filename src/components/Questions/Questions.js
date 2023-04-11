@@ -28,8 +28,8 @@ export function Questions () {
 
   return (
      <ul className={'question-answer'}>
-       {answersQuestions.map(item=>(
-          <QuestionItem data={item} key={item.id}/>
+       {answersQuestions.map((item, index)=>(
+          <QuestionItem data={item} key={item.id} index={index}/>
        ))}
      </ul>
   )

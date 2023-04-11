@@ -1,27 +1,40 @@
 .questions .question-answer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   width: 60%;
   padding: 0 20px;
 }
 .questions .question-answer .questionItem {
   display: flex;
-  flex-direction: column;
+  column-gap: 15px;
+  align-items: flex-start;
+  color: #C1B18E;
 }
-.questions .question-answer .questionItem:not(:last-child) {
-  border-bottom: 1px solid #ebedec;
+.questions .question-answer .questionItem .questionNumber {
+  font-family: "Lack Line", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 80%;
 }
-.questions .question-answer .questionItem .question {
+.questions .question-answer .questionItem .questionAnswer-block {
+  border-bottom: 1px solid #C1B18E;
+  flex-grow: 1;
+  position: relative;
+}
+.questions .question-answer .questionItem .questionAnswer-block .question {
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 10px 0;
   height: 50px;
   border: none;
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   background-color: unset;
   box-sizing: content-box;
+  color: inherit;
 }
-.questions .question-answer .questionItem .question .cross {
+.questions .question-answer .questionItem .questionAnswer-block .question .cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,22 +44,23 @@
   right: 30px;
   transition: 0.4s;
 }
-.questions .question-answer .questionItem .question .cross:before, .questions .question-answer .questionItem .question .cross:after {
+.questions .question-answer .questionItem .questionAnswer-block .question .cross:before, .questions .question-answer .questionItem .questionAnswer-block .question .cross:after {
   content: "";
   position: absolute;
   width: 100%;
   height: 1px;
-  background-color: #000;
+  background-color: #C1B18E;
 }
-.questions .question-answer .questionItem .question .cross:after {
+.questions .question-answer .questionItem .questionAnswer-block .question .cross:after {
   transform: rotate(90deg);
 }
-.questions .question-answer .questionItem .answer {
+.questions .question-answer .questionItem .questionAnswer-block .answer {
   display: flex;
   align-items: flex-start;
   height: 40px;
   transition: 0.5s;
   overflow: hidden;
+  will-change: height;
 }
 .questions .question-answer .questionItem.closed .answer {
   height: 0;

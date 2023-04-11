@@ -48,9 +48,10 @@ body .wrapper main section.content {
   flex-direction: column;
   align-items: center;
   padding-top: 80px;
+  color: #C1B18E;
 }
 body .wrapper main section .titleContainer {
-  font-family: "Lack";
+  font-family: "Lack", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
