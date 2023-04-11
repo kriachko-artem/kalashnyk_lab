@@ -4,17 +4,12 @@ export function toCling(element) {
    const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
    if (!devices.test(navigator.userAgent)) {
       element.addEventListener('mouseenter', (event)=> {
-         move(to(event))
-         element.onmousemove = (event)=> move(to(event))
+         move(to(event), 1.4)
+         element.onmousemove = (event)=> move(to(event), 1.2)
       })
       element.onmouseleave = ()=> {
          element.onmousemove = null;
-         gsap.to(element,{
-            translateX: 0,
-            translateY: 0,
-            duration: 1,
-            ease: "elastic.out(1, 0.3)",
-         })
+         move({x:0, y:0}, 1.3)
       }
    }
    function to(event){
@@ -27,11 +22,11 @@ export function toCling(element) {
          y: -center.y + event.offsetY,
       }
    }
-   function move(to){
+   function move(to, duration){
       gsap.to(element,{
          translateX: to.x,
          translateY: to.y,
-         duration: 2,
+         duration: duration,
          ease: "elastic.out(1, 0.3)",
       })
    }
