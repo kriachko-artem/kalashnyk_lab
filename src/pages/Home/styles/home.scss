@@ -1,3 +1,4 @@
+@use './../../../global/vars';
 .home{
   .about{
     color: #000 !important;
@@ -50,5 +51,6 @@
   }
   .backgroundSection{
     background-color: #232323;
+    color: vars.$main_text_color;
   }
 }
