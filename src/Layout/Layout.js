@@ -8,8 +8,13 @@ import {Loader} from "../components/Loader/Loader";
 import {SmallButton} from "../components/ButtonConsultation/SmallButton";
 import {ModalWrapper} from "../components/ModalWrapper/ModalWrapper";
 import {ConsultationForm} from "../components/ConsultationForm/ConsultationForm";
+import {useEffect} from "react";
 
 export function Layout() {
+   //Controlling page scroll by state
+   const scroll = useSelector(state => state.scrollReducer.active);
+   document.querySelector('body').style.overflow = scroll ? 'visible' : 'hidden';
+
 
    const showConsultation = useSelector(state => state.consultationModalReducer.show);
 
