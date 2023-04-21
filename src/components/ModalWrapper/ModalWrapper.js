@@ -1,13 +1,16 @@
 import './styles/modalWrapper.css'
 import {motion} from "framer-motion";
 import {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {activateScroll, deactivateScroll} from "../../store/slices/scroll";
 
 export function ModalWrapper ({children}) {
+   const dispatch = useDispatch();
 
    useEffect(() => {
-      document.querySelector('body').style.overflow = 'hidden'
+      dispatch(deactivateScroll())
       return () => {
-         document.querySelector('body').style.overflowY = 'visible'
+         dispatch(activateScroll())
       }
    })
 
