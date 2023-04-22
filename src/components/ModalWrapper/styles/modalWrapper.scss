@@ -2,26 +2,18 @@
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(10px);
+  //background-color: rgba(0, 0, 0, 0.18);
+  //backdrop-filter: blur(10px);
+  will-change: backdrop-filter, backgrond-color;
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   @media screen and (max-width: 500px){
     .modalWrapper{
       background-color: unset;
       backdrop-filter: none;
-    }
-    .modal{
-      align-self: start;
-      justify-content: center;
-      width: 100%;
-      overflow-y: scroll;
-      height: 100vh;
-      height: 100dvh;
-      border-radius: unset;
-      max-height: 100%;
     }
   }
 }

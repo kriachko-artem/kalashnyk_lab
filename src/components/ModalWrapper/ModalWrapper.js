@@ -13,12 +13,23 @@ export function ModalWrapper ({children}) {
          dispatch(activateScroll())
       }
    })
+   const styles = {
+      to: {
+         backgroundColor: 'rgba(0, 0, 0, 0.18)',
+         backdropFilter: 'blur(10px)'
+      },
+      from: {
+         backgroundColor: 'rgba(0, 0, 0, 0)',
+         backdropFilter: 'blur(0px)'
+      }
+   };
 
   return (
      <motion.div className={'modalWrapper'}
-                 initial={{opacity: 0}}
-                 animate={{opacity: 1}}
-                 exit={{opacity: 0}}>
+                 initial={styles.from}
+                 animate={styles.to}
+                 exit={styles.from}
+     >
         {children}
      </motion.div>
   )
