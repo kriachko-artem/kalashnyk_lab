@@ -1,0 +1,12 @@
+.menu{
+  align-self: flex-start;
+  overflow: hidden;
+
+  will-change: width;
+  height: 100%;
+  background-color: #fff;
+  .menu-content{
+    width: 50%;
+    background-color: #ebedec;
+  }
+}
