@@ -1,13 +1,18 @@
 @use "./../../global/vars";
 body{
   * {
-    font-family: 'Lack', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
   }
   .wrapper{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
+    .animation-container{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
     //font-family: 'Lack';
     main{
       display: flex;
@@ -53,7 +58,6 @@ body{
           padding-top: 80px;
         }
         .titleContainer {
-          font-family: 'Lack', sans-serif;
           display: flex;
           flex-direction: column;
           align-items: center;
