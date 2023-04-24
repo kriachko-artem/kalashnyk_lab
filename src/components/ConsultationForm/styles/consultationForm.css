@@ -12,8 +12,20 @@ section.consultation {
   justify-content: center;
   flex-direction: column;
   position: relative;
-  transition: 0.8s;
+  transition: height 0.3s;
   will-change: height;
+}
+@media screen and (max-width: 500px) {
+  .consultationForm {
+    width: 100%;
+    height: 100dvh;
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  .consultationForm > div {
+    flex-grow: 1;
+    padding-top: 50px;
+  }
 }
 .consultationForm .modalHeader {
   padding: 20px;
@@ -124,6 +136,11 @@ section.consultation {
 .consultationForm button.closeButton:hover svg {
   color: crimson !important;
 }
+@media screen and (max-width: 500px) {
+  .consultationForm button.closeButton {
+    top: calc(100dvh - 50px);
+  }
+}
 .consultationForm .sentForm {
   padding: 20px;
   width: 100%;
@@ -132,7 +149,7 @@ section.consultation {
   align-items: center;
   flex-direction: column;
   opacity: 0;
-  animation: show 0.5s ease-in forwards;
+  animation: show 0.3s ease-in forwards;
   will-change: opacity;
   box-sizing: border-box;
 }
@@ -149,6 +166,9 @@ section.consultation {
   transform: translateX(-2.2%);
 }
 @keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
   100% {
     transform: rotate(360deg);
   }
@@ -173,6 +193,9 @@ section.consultation {
   transform: none;
 }
 @keyframes show {
+  0% {
+    opacity: 0;
+  }
   100% {
     opacity: 1;
   }

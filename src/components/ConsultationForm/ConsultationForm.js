@@ -8,15 +8,19 @@ import {Selector} from "../Selector/Selector";
 import {IoCheckmarkSharp, IoClose} from "react-icons/io5";
 import {AnimatePresence, motion} from "framer-motion";
 import {sendToSheets, sendToTelegram} from "../../api/sendingForm";
+import {useOutsideClick} from "../../hooks/useOutsideClick";
 
 
 export function ConsultationForm({closable = false}) {
+
+   const ref = useOutsideClick(()=>hide());
 
    const form = useRef(null);
 
    const coursesList = useSelector(state => state.coursesListReducer.courses);
    const dispatch = useDispatch();
    const hide = () => {
+      setEnable(false)
       dispatch(hideModal())
    }
 
@@ -40,6 +44,7 @@ export function ConsultationForm({closable = false}) {
    const [mailValid, setMailValid] = useState(true);
    const [permission, setPermission] = useState(false);
    const [status, setStatus] = useState('');
+   const [enable, setEnable] = useState(true);
 
    const allValid = (nameValid && phoneValid && mailValid && course && permission) === true
 
@@ -96,8 +101,13 @@ export function ConsultationForm({closable = false}) {
    }
 
    return (
-      <div className="consultationForm" style={{minHeight: status === 'sent' ? '100px' : '500px'}}>
-         <AnimatePresence mode={'wait'}>
+      <AnimatePresence>
+         { enable &&
+         <motion.div className="consultationForm" ref={ref} style={{minHeight: status === 'sent' ? '100px' : '500px'}}
+                     initial={{opacity: 0}}
+                     animate={{opacity: 1}}
+                     exit={{opacity: 0}}
+         >
             {!status && <motion.div
                key={"form"}
                exit={{opacity: 0, scale: 0.1}}
@@ -120,16 +130,14 @@ export function ConsultationForm({closable = false}) {
                                id={'name'} type="text"
                                placeholder={'Артем Крячко'}/>
                      </div>
-                     <AnimatePresence>
-                        {!nameValid && <motion.div
-                           initial={{height: 0}}
-                           animate={{height: 'auto'}}
-                           exit={{height: 0}}
-                           transition={{duration: 0.2, ease: 'easeOut'}}
-                           className={'notValid'}>
-                           <span className={'notValid'}>Перевірте правильність імені та прізвища</span>
-                        </motion.div>}
-                     </AnimatePresence>
+                     {!nameValid && <motion.div
+                        initial={{height: 0}}
+                        animate={{height: 'auto'}}
+                        exit={{height: 0}}
+                        transition={{duration: 0.2, ease: 'easeOut'}}
+                        className={'notValid'}>
+                        <span className={'notValid'}>Перевірте правильність імені та прізвища</span>
+                     </motion.div>}
                   </div>
                   <div className="row">
                      <div className="inputName input">
@@ -139,16 +147,14 @@ export function ConsultationForm({closable = false}) {
                                id={'lastName'} type="text"
                                placeholder={'artem@gmail.com'}/>
                      </div>
-                     <AnimatePresence>
-                        {!mailValid && <motion.div
-                           initial={{height: 0}}
-                           animate={{height: 'auto'}}
-                           exit={{height: 0}}
-                           transition={{duration: 0.2, ease: 'easeOut'}}
-                           className={'notValid'}>
-                           <span>Перевірте правильність поштового адресу</span>
-                        </motion.div>}
-                     </AnimatePresence>
+                     {!mailValid && <motion.div
+                        initial={{height: 0}}
+                        animate={{height: 'auto'}}
+                        exit={{height: 0}}
+                        transition={{duration: 0.2, ease: 'easeOut'}}
+                        className={'notValid'}>
+                        <span>Перевірте правильність поштового адресу</span>
+                     </motion.div>}
                   </div>
                   <div className="row">
                      <div className="inputName input">
@@ -158,16 +164,14 @@ export function ConsultationForm({closable = false}) {
                                id={'phone'} type="tel"
                                placeholder={'+38 (050) 087-64-55'}/>
                      </div>
-                     <AnimatePresence>
-                        {!phoneValid && <motion.div
-                           initial={{height: 0}}
-                           animate={{height: 'auto'}}
-                           exit={{height: 0}}
-                           transition={{duration: 0.2, ease: 'easeOut'}}
-                           className={'notValid'}>
-                           <span>Перевірте правильність номеру телефону</span>
-                        </motion.div>}
-                     </AnimatePresence>
+                     {!phoneValid && <motion.div
+                        initial={{height: 0}}
+                        animate={{height: 'auto'}}
+                        exit={{height: 0}}
+                        transition={{duration: 0.2, ease: 'easeOut'}}
+                        className={'notValid'}>
+                        <span>Перевірте правильність номеру телефону</span>
+                     </motion.div>}
                   </div>
                   <div className="row">
                      <div className="inputCourses input">
@@ -184,15 +188,16 @@ export function ConsultationForm({closable = false}) {
                           setPermission(!permission)
                        }}
                   >
-                  <span className={`checkbox iconHolder ${permission ? 'checked' : ''}`}>
-                     {permission ? <IoCheckmarkSharp color={'#0795e2'}/> : null}
-                  </span>
+                     <span className={`checkbox iconHolder ${permission ? 'checked' : ''}`}>
+                        {permission ? <IoCheckmarkSharp color={'#0795e2'}/> : null}
+                     </span>
                      <label>Згоден на обробку персональних даних</label>
                   </div>
-                  <button className={'send'}
+                  <motion.button whileTap={{scale: 0.97}} className={'send'}
+                                 style={{pointerEvents: !allValid && 'none'}}
                           onClick={sendForm}
                           disabled={!allValid}>Залишити запит
-                  </button>
+                  </motion.button>
                </div>
             </motion.div>}
             {status === 'pending' &&
@@ -221,7 +226,8 @@ export function ConsultationForm({closable = false}) {
                   </div>
                </div>
             }
-         </AnimatePresence>
-      </div>
+         </motion.div>
+         }
+      </AnimatePresence>
    )
 }
