@@ -1,5 +1,5 @@
 import {Layout} from "./Layout/Layout";
-import {Route, Routes} from "react-router";
+import {Route, Routes, useLocation} from "react-router";
 import {Home} from "./pages/Home/Home";
 import {Courses} from "./pages/Courses/Courses";
 import {Contacts} from "./pages/Contacts/Contacts";
@@ -10,6 +10,7 @@ import coursesList from './data/data.json'
 import {Category} from "./pages/Category/Category";
 import {NotFound} from "./pages/NotFound/NotFound";
 import {Course} from "./pages/Course/Course";
+import {AnimatePresence} from "framer-motion";
 
 function App() {
 
@@ -21,9 +22,11 @@ function App() {
       },0)
    })
 
+   const location = useLocation();
+
    return (
-      <>
-         <Routes>
+      <AnimatePresence mode={'wait'}>
+         <Routes location={location} key={location.pathname}>
             <Route path={'/'} element={<Layout />}>
                <Route index element={<Home />}/>
                <Route path={'courses'} element={<Courses />}/>
@@ -33,7 +36,7 @@ function App() {
                <Route path={'*'} element={<NotFound />}/>
             </Route>
          </Routes>
-      </>
+      </AnimatePresence>
    );
 }
 

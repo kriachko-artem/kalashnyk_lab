@@ -10,6 +10,7 @@ import {ModalWrapper} from "../components/ModalWrapper/ModalWrapper";
 import {ConsultationForm} from "../components/ConsultationForm/ConsultationForm";
 import {Menu} from "../components/Menu/Menu";
 import {CoursesMenu} from "../components/Menu/CoursesMenu/CoursesMenu";
+import {motion} from "framer-motion";
 
 export function Layout() {
    //Controlling page scroll by state
@@ -27,8 +28,14 @@ export function Layout() {
          <div className={'wrapper'}>
             <Loader>
                <Header scrollY={scrollY}/>
-               <Main/>
-               <Footer/>
+               <motion.div className={'animation-container'}
+                           initial={{opacity: 0, translateY: -50}}
+                           animate={{opacity: 1, translateY: 0, transition: {duration: 1, ease: 'easeOut', delay: 0.6}}}
+                           exit={{opacity: 0, translateY: -50, transition: {duration: 0.4, ease: 'easeIn'}}}
+               >
+                  <Main/>
+                  <Footer/>
+               </motion.div>
                <SmallButton scrollY={scrollY}/>
                <AnimatePresence>
                   {showConsultation && <ModalWrapper>
