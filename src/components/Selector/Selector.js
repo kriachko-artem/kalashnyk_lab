@@ -3,7 +3,7 @@ import { IoCaretDown } from "react-icons/io5";
 import {useState} from "react";
 import {Dropdown} from "./Dropdown";
 import {useOutsideClick} from "../../hooks/useOutsideClick";
-import {AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 export function Selector ({options, checkedValue, autoClose = true}) {
 
@@ -24,10 +24,13 @@ export function Selector ({options, checkedValue, autoClose = true}) {
 
    return (
        <div ref={ref} className={"selector"}>
-          <div onClick={openClose} className={`label ${opened ? 'opened' : ''}`}>
+          <motion.div className={`label ${opened ? 'opened' : ''}`}
+                      onClick={openClose}
+                      whileTap={{scale: 0.97}}
+          >
              {checked ? checked.label : 'Оберіть'}
              <span className={'iconHolder'}><IoCaretDown/></span>
-          </div>
+          </motion.div>
           <AnimatePresence>
              {opened && <Dropdown onChecked={onChecked} options={options} />}
           </AnimatePresence>

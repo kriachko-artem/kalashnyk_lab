@@ -41,7 +41,6 @@
 .selector .dropdown li {
   padding: 5px 15px;
   cursor: pointer;
-  transition: 0.3s;
 }
 .selector .dropdown li:hover {
   background-color: #d7fcfc;
