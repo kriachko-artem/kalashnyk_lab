@@ -1,5 +1,4 @@
 import {Outlet} from "react-router";
-import {motion} from "framer-motion";
 import {useEffect} from "react";
 
 export function Main () {
