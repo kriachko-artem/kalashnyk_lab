@@ -8,6 +8,7 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow-x: hidden;
     .animation-container{
       display: flex;
       flex-direction: column;

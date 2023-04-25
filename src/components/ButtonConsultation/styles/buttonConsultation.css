@@ -17,6 +17,11 @@ button.consultation.big {
   position: relative;
   overflow: hidden;
 }
+@media screen and (max-width: 500px) {
+  button.consultation.big {
+    width: 100%;
+  }
+}
 button.consultation.big:after {
   display: none;
   animation: shine 0.4s linear forwards;

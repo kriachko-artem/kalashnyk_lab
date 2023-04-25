@@ -18,6 +18,9 @@ button{
       font-size: 20px;
       position: relative;
       overflow: hidden;
+      @media screen and (max-width: 500px){
+        width: 100%;
+      }
       &:after{
         display: none;
         animation: shine 0.4s linear forwards;
