@@ -5,7 +5,14 @@ import {motion, useScroll, useTransform} from "framer-motion";
 export function Poster ({title = '', description = '', style = {}, children}) {
 
    const {scrollY} = useScroll();
-   const offsetY = [-150, 300];
+   const startOffset = (windowWidth)=>{
+      if (windowWidth < 500) return -800
+       else if (windowWidth < 900) return -300;
+       else if (windowWidth < 1280) return -250;
+       else if (windowWidth > 1280) return -200
+   };
+   // console.log("startOffset(window.innerWidth)",startOffset(window.innerWidth))
+   const offsetY = [startOffset(window.innerWidth), 500];
    const borderRadius = ['0%', '50%'];
    const styles = {
       borderBottomLeftRadius: useTransform(scrollY, offsetY, borderRadius),
