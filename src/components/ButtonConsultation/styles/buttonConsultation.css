@@ -24,7 +24,6 @@ button.consultation.big {
 }
 button.consultation.big:after {
   display: none;
-  animation: shine 0.4s linear forwards;
   content: "";
   position: absolute;
   left: -15%;
@@ -36,15 +35,16 @@ button.consultation.big:after {
   box-shadow: 0 0 23px 15px rgba(255, 255, 255, 0.31);
 }
 @keyframes shine {
-  from {
+  0% {
     left: -15%;
   }
-  to {
+  100% {
     left: 120%;
   }
 }
 button.consultation.big:hover:after {
   display: block;
+  animation: shine 0.4s linear forwards;
 }
 button.consultation.small {
   padding: 15px;
