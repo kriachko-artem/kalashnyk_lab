@@ -13,7 +13,7 @@ section.consultation {
   flex-direction: column;
   position: relative;
   transition: height 0.3s;
-  will-change: height;
+  will-change: height opacity;
 }
 @media screen and (max-width: 500px) {
   .consultationForm {
