@@ -20,6 +20,7 @@ export function ConsultationForm({closable = false}) {
    const coursesList = useSelector(state => state.coursesListReducer.courses);
    const dispatch = useDispatch();
    const hide = () => {
+      if (!closable) return
       setEnable(false)
       dispatch(hideModal())
    }
