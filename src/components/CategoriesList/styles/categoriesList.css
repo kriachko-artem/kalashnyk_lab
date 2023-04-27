@@ -16,8 +16,8 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 30px;
+  justify-content: space-evenly;
+  gap: 70px;
 }
 
 /*# sourceMappingURL=categoriesList.css.map */
