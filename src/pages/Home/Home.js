@@ -4,6 +4,7 @@ import {Questions} from "../../components/Questions/Questions";
 import {ButtonConsultation} from "../../components/ButtonConsultation/ButtonConsultation";
 import {Preferences} from "../../components/Preferences/Preferences";
 import {CategoriesList} from "../../components/CategoriesList/CategoriesList";
+import {motion} from "framer-motion";
 
 
 export function Home () {
@@ -11,6 +12,17 @@ export function Home () {
       content: {
          alignSelf: 'flex-start',
          textAlign: 'left',
+      }
+   };
+
+   const boxVariants = {
+      hidden: {opacity: 0,transition:{duration: 0}},
+      visible: {opacity: 1, translateY: 0,
+         transition:{
+            staggerChildren: 0.35,
+            duration: 2.5,
+            ease: [.25, .86, .14, 1]
+         }
       }
    };
    
@@ -24,13 +36,24 @@ export function Home () {
             <ButtonConsultation/>
          </Poster>
           <section className={'about content'}>
-             <div className="container">
-                <div className="img-holder">
+             <motion.div className="container"
+                         variants={boxVariants}
+                         initial={'hidden'}
+                         whileInView={'visible'}
+                         viewport={{ once: true }}
+             >
+                <motion.div className="img-holder"
+                            variants={boxVariants}
+                >
 
-                </div>
+                </motion.div>
                 <div className={'textBlock'}>
-                   <h1 className={'title'}>Привіт, мене звати Калашник Денис</h1>
-                   <div className="textContent">
+                   <motion.h1 className={'title'}
+                              variants={boxVariants}
+                   >Привіт, мене звати Калашник Денис</motion.h1>
+                   <motion.div className="textContent"
+                               variants={boxVariants}
+                   >
                       <p>
                          Я - лікар лицьової косметології зі спеціалізацією на ботулінотерапії, контурній пластиці обличчя та нитковому ліфтингу.
                          Мої навички та досвід дозволяють мені досягати вражаючих результатів у покращенні вигляду і самопочуття моїх пацієнтів.
@@ -42,9 +65,9 @@ export function Home () {
                       <p>
                          Я завжди прагну підтримувати довгострокові стосунки зі своїми клієнтами, забезпечуючи їм якісну та індивідуальну опіку в будь-який момент.
                       </p>
-                   </div>
+                   </motion.div>
                 </div>
-             </div>
+             </motion.div>
           </section>
           <div className="backgroundSection">
              <Preferences />
@@ -54,7 +77,7 @@ export function Home () {
                    <h1 className={'title'}>Найчастіші запитання клієнтів та відповіді на них</h1>
                    <span className={'description'}></span>
                 </div>
-                <Questions />
+                {/*<Questions />*/}
              </section>
           </div>
        </div>
