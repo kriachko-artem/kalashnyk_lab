@@ -26,7 +26,7 @@ export function SmallButton({scrollY}) {
    }
 
    return (
-      <motion.div className={'buttonHolder'} style={styles}>
+      <motion.div className={'buttonHolder'} whileTap={{scale: 0.97}} style={styles}>
          <button ref={button} onClick={show} className={'consultation small'}>
             <MdOutlineQuestionAnswer size={'30px'}/>
          </button>
