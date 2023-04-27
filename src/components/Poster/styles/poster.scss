@@ -15,6 +15,9 @@
     @media screen and (max-width: 500px){
       max-width: unset;
     }
+    &>*{
+      will-change: opacity, transform;
+    }
     .title {
       font-family: "Comfortaa", sans-serif;
       font-weight: 600;
@@ -26,6 +29,7 @@
       }
     }
     .description {
+      display: block;
       font-weight: 400;
       font-size: 30px;
       line-height: 1.5;

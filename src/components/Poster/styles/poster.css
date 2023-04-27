@@ -18,6 +18,9 @@
     max-width: unset;
   }
 }
+.poster .posterContent > * {
+  will-change: opacity, transform;
+}
 .poster .posterContent .title {
   font-family: "Comfortaa", sans-serif;
   font-weight: 600;
@@ -31,6 +34,7 @@
   }
 }
 .poster .posterContent .description {
+  display: block;
   font-weight: 400;
   font-size: 30px;
   line-height: 1.5;

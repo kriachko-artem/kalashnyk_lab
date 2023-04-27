@@ -4,6 +4,7 @@ import {motion, useScroll, useTransform} from "framer-motion";
 
 export function Poster ({title = '', description = '', style = {}, children}) {
 
+
    const {scrollY} = useScroll();
    const startOffset = (windowWidth)=>{
       if (windowWidth < 500) return -800
@@ -19,6 +20,12 @@ export function Poster ({title = '', description = '', style = {}, children}) {
       borderBottomRightRadius: useTransform(scrollY, offsetY, borderRadius),
    };
 
+
+   const boxVariants = {
+      hidden:{opacity: 0, translateY: -70,transition:{staggerChildren: 0.2, duration: 0.5}},
+      visible:{opacity: 1, translateY: 0,transition:{staggerChildren: 0.2, duration: 0.5, delayChildren: 0.5}}
+   };
+
   return (
      <section className={'poster'} style={style.poster}>
         <motion.div className="img-holder background" style={styles}>
@@ -27,13 +34,25 @@ export function Poster ({title = '', description = '', style = {}, children}) {
            </div>
         </motion.div>
         <div className="container">
-           <div className="posterContent" style={style.content}>
-              <h1 className={'title'}>{title}</h1>
-              <span className={'description'}>{description}</span>
-              <div className="child">
+           <motion.div className="posterContent" style={style.content}
+                       variants={boxVariants}
+                       initial={'hidden'}
+                       animate={'visible'}
+                       exit={'hidden'}
+                       // transition={{delayChildren: 0.5}}
+           >
+              <motion.h1 className={'title'}
+                         variants={boxVariants}
+              >{title}</motion.h1>
+              <motion.span className={'description'}
+                           variants={boxVariants}
+              >{description}</motion.span>
+              <motion.div className="child"
+                          variants={boxVariants}
+              >
                  {children || null}
-              </div>
-           </div>
+              </motion.div>
+           </motion.div>
         </div>
      </section>
   )
