@@ -29,9 +29,9 @@ export function Layout() {
             <Loader>
                <Header scrollY={scrollY}/>
                <motion.div className={'animation-container'}
-                           initial={{opacity: 0, translateY: -50}}
-                           animate={{opacity: 1, translateY: 0, transition: {duration: 1, ease: 'easeOut', delay: 0.6}}}
-                           exit={{opacity: 0, translateY: -50, transition: {duration: 0.4, ease: 'easeIn'}}}
+                           initial={{opacity: 0}}
+                           animate={{opacity: 1, transition: {duration: 0.6, ease: 'easeOut', delay: 0.6}}}
+                           exit={{opacity: 0, transition: {duration: 0.4, ease: 'easeIn'}}}
                >
                   <Main/>
                   <Footer/>
