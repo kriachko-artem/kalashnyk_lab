@@ -18,7 +18,7 @@ export function Course () {
            <Poster title={data.title} description={data.description}/>
            <CategoriesList to={'/courses/'}/>
            <section className={'consultation content'}>
-              <ConsultationForm/>
+              <ConsultationForm closable={false}/>
            </section>
         </>
   )
